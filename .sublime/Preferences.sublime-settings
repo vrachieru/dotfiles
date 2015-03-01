@@ -1,0 +1,17 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by file type specific settings.
+{
+  // Start up with the last set of open files
+  "remember_open_files": true,
+  // OS X: When files are opened from finder, or by drag&drop, this controls if a new window is created or not
+  "open_files_in_new_window": false,
+  // Show the full path to files in the title bar
+  "show_full_path": true,
+  // Tabs with unsaved modifications change color
+  "highlight_modified_tabs": true,
+  // Spaces are better
+  "translate_tabs_to_spaces": false,
+  "tab_size": 2,
+  // OS X: the selected text will be copied into the find panel when it's shown
+  "find_selected_text": true
+}
