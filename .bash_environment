@@ -1,0 +1,49 @@
+#-#
+#-# Color settings
+#-#
+
+# Enable terminal colors
+export CLICOLOR=1
+export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
+
+# Enable grep coloring
+export GREP_OPTIONS='--color=always'
+export GREP_COLOR='1;31'
+
+
+#-#
+#-# Bash prompt
+#-#
+
+export PS1="${PROMPT_BASE}${PROMPT_GIT}${PROMPT_END}"
+
+
+#-#
+#-# Editor
+#-#
+
+export EDITOR=vim
+
+
+#-#
+#-# Maven
+#-#
+
+export M2_HOME=/usr/local/apache-maven/
+export M2=$M2_HOME/bin
+export PATH=$M2:$PATH
+
+
+#-#
+#-# Java
+#-#
+
+export JAVA_HOME=$([ -x /usr/libexec/java_home ] && /usr/libexec/java_home -v 1.7)
+
+
+#-#
+#-# History
+#-#
+
+export HISTCONTROL=ignoredups
+shopt -s histappend

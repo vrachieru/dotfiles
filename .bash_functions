@@ -1,0 +1,104 @@
+#-#
+#-# Java
+#-#
+
+# Simple java configuration management
+
+java-config() {
+  if [ ! -x /usr/libexec/java_home ]; then
+    echo 'Java is not present!'
+    return
+  fi
+
+  case ${1} in
+    6)
+      export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)
+    ;;
+    7)
+      export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+    ;;
+    8)
+      export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+    ;;
+    fast)
+      export JAVA_OPTS="-d32 -client -Djruby.compile.mode=OFF"
+    ;;
+    heap)
+      if [ -z "$2" ]; then
+        $2 = 1024
+      fi
+      export JAVA_OPTS="-Xmx${2}m"
+    ;;
+    nopts)
+      unset JAVA_OPTS
+    ;;
+    versions)
+      /usr/libexec/java_home --verbose
+     ;;
+  esac
+
+  java -version
+}
+
+
+#-#
+#-# Files
+#-#
+
+# Show hidden files in OSX Finder
+
+if [[ $SYSTEM_OS -eq 'Darwin' ]]; then
+  function showhidden {
+    if [ -z "$1" ]; then
+      echo "Usage: showhidden <true|false>"
+    else
+      if [[ $1 -eq 'true' ]]; then
+        defaults write com.apple.finder AppleShowAllFiles YES
+      else
+        defaults write com.apple.finder AppleShowAllFiles NO
+      fi
+    fi
+  }
+fi
+
+# Universal archive extractor
+
+function extract {
+  if [ -z "$1" ]; then
+    echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|exe|tar.bz2|tar.gz|tar.xz>"
+  else
+    if [ -f "$1" ]; then
+      case "$1" in
+        *.tar.bz2)   tar xvjf $1    ;;
+        *.tar.gz)    tar xvzf $1    ;;
+        *.tar.xz)    tar xvJf $1    ;;
+        *.lzma)      unlzma $1      ;;
+        *.bz2)       bunzip2 $1     ;;
+        *.rar)       unrar x -ad $1 ;;
+        *.gz)        gunzip $1      ;;
+        *.tar)       tar xvf $1     ;;
+        *.tbz2)      tar xvjf $1    ;;
+        *.tgz)       tar xvzf $1    ;;
+        *.zip)       unzip $1       ;;
+        *.Z)         uncompress $1  ;;
+        *.7z)        7z x $1        ;;
+        *.xz)        unxz $1        ;;
+        *.exe)       cabextract $1  ;;
+        *)           echo "extract: '$1' - unknown archive method" ;;
+      esac
+    else
+      echo "'$1' - file does not exist"
+    fi
+  fi
+}
+
+
+#-#
+#-# Misc
+#-#
+
+# Simple calculator
+
+= () {
+  echo "$*" | bc -l
+}
