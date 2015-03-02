@@ -47,3 +47,19 @@ export JAVA_HOME=$([ -x /usr/libexec/java_home ] && /usr/libexec/java_home -v 1.
 
 export HISTCONTROL=ignoredups
 shopt -s histappend
+
+#-#
+#-# Man pages
+#-#
+
+# Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X"
+
+# Color man pages
+export LESS_TERMCAP_mb=$(printf "${COLOR_LIGHT_RED}")              # begin blinking
+export LESS_TERMCAP_md=$(printf "${COLOR_LIGHT_RED}")              # begin bold
+export LESS_TERMCAP_me=$(printf "${COLOR_NC}")                     # end mode
+export LESS_TERMCAP_se=$(printf "${COLOR_NC}")                     # end standout-mode
+export LESS_TERMCAP_so=$(printf "${BACKGROUND_RED}${COLOR_WHITE}") # begin standout-mode - info box
+export LESS_TERMCAP_ue=$(printf "${COLOR_NC}")                     # end underline
+export LESS_TERMCAP_us=$(printf "${COLOR_LIGHT_GREEN}")            # begin underline
