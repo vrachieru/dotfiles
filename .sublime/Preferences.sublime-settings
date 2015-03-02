@@ -3,15 +3,58 @@
 {
   // Start up with the last set of open files
   "remember_open_files": true,
+
   // OS X: When files are opened from finder, or by drag&drop, this controls if a new window is created or not
   "open_files_in_new_window": false,
+
   // Show the full path to files in the title bar
   "show_full_path": true,
+
   // Tabs with unsaved modifications change color
   "highlight_modified_tabs": true,
+
+  // Show gutter
+  "gutter": true,
+
+  // Spacing between the gutter and the text
+  "margin": 4,
+
+  // Fold buttons are the triangles shown in the gutter to fold regions of text
+  "fold_buttons": true,
+
+  // Hides the fold buttons unless the mouse is over the gutter
+  "fade_fold_buttons": false,
+
+  // Show line numbers
+  "line_numbers": true,
+
   // Spaces are better
-  "translate_tabs_to_spaces": false,
+  "translate_tabs_to_spaces": true,
   "tab_size": 2,
+  "use_tab_stops": true,
+
+  // Nice little caret
+  "caret_style": "phase",
+
+  // If enabled, will highlight any line with a caret
+  "highlight_line": false,
+
+  // Don't leave white space hanging around
+  "trim_trailing_white_space_on_save": true,
+
+  // Keep things consistent
+  "ensure_newline_at_eof_on_save": true,
+
+  // Always use sensible line endings
+  "default_line_ending": "unix",
+
+  // Shift+Tab should always unindent
+  "shift_tab_unindent": true,
+
+  // Copy and cut work on current line if nothing is selected
+  "copy_with_empty_selection": true,
+
   // OS X: the selected text will be copied into the find panel when it's shown
   "find_selected_text": true
+
 }
