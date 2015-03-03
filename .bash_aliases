@@ -87,6 +87,7 @@ alias lip="ifconfig | grep 'inet ' | grep -v '127.0.0.1' | head -n1 | awk '{prin
 
 alias fucking=sudo
 alias cls='clear'
+alias week='date +%V'
 
 if [[ $SYSTEM_OS -eq 'Darwin' ]]; then
   alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
