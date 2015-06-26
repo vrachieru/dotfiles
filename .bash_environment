@@ -66,3 +66,21 @@ export LESS_TERMCAP_se=$(printf "${COLOR_NC}")                     # end standou
 export LESS_TERMCAP_so=$(printf "${BACKGROUND_RED}${COLOR_WHITE}") # begin standout-mode - info box
 export LESS_TERMCAP_ue=$(printf "${COLOR_NC}")                     # end underline
 export LESS_TERMCAP_us=$(printf "${COLOR_LIGHT_GREEN}")            # begin underline
+
+
+#-#
+#-# Misc
+#-#
+
+# Hack to get rid of the annoying TMOUT
+unset TMOUT > /dev/null 2>&1
+
+if [[ $? -ne 0 ]]
+then
+  gdb <<EOF > /dev/null 2>&1
+attach $$
+call unbind_variable("TMOUT")
+detach
+quit
+EOF
+fi
