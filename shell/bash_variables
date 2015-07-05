@@ -50,12 +50,3 @@ export TEXT_UNDERLINE='\e[4m'
 export TEXT_BLINK='\e[5m'
 export TEXT_INVERT='\e[7m'
 export TEXT_HIDE='\e[8m'
-
-
-#-#
-#-# Prompt
-#-#
-
-export PROMPT_BASE="\[${COLOR_BLUE}\]\u\[${COLOR_NC}\]@\[${COLOR_BLUE}\]\h\[${COLOR_NC}\]:\w"
-export PROMPT_GIT="\$(git branch 2>/dev/null | sed -n '/^*/p' | sed 's/* /:\[${COLOR_GREEN}\]/g')"
-export PROMPT_END="\[${COLOR_NC}\]\$ "
