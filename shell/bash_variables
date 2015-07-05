@@ -53,13 +53,6 @@ export TEXT_HIDE='\e[8m'
 
 
 #-#
-#-# System
-#-#
-
-export SYSTEM_OS=$(uname)
-
-
-#-#
 #-# Prompt
 #-#
 
