@@ -62,14 +62,3 @@ if [[ $SYSTEM_OS -eq 'Darwin' ]]; then
     fi
   }
 fi
-
-
-#-#
-#-# Misc
-#-#
-
-# Simple calculator
-
-= () {
-  echo "$*" | bc -l
-}

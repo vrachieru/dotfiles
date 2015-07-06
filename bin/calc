@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Simple calculator made from wrapping the bc command
+
+result="$(echo -e "scale=10;$*\n" | bc --mathlib | tr -d '\\\n')";
+#                        └─ default (when `--mathlib` is used) is 20
+
+# Improve the output for decimal numbers
+if [[ "$result" == *.* ]]
+then
+  echo "$result" |
+  sed -e 's/^\./0./'        `# add "0" for cases like ".5"` \
+      -e 's/^-\./-0./'      `# add "0" for cases like "-.5"`\
+      -e 's/0*$//;s/\.$//';  # remove trailing zeros
+else
+  echo "$result"
+fi
