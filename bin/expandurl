@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Expand short URLs by fetching the headers and
+# checking for redirection
+
+if [[ $# -ne 1 ]]
+then
+  echo 'Usage: expandurl short_url'
+  exit;
+fi
+
+curl -sI $1 | sed -n 's/Location: *//p'
