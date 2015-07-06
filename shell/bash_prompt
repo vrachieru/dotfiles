@@ -7,3 +7,5 @@
 export PROMPT_BASE="\[${COLOR_BLUE}\]\u\[${COLOR_NC}\]@\[${COLOR_BLUE}\]\h\[${COLOR_NC}\]:\w"
 export PROMPT_GIT="\$(git branch 2>/dev/null | sed -n '/^*/p' | sed 's/* /:\[${COLOR_GREEN}\]/g')"
 export PROMPT_END="\[${COLOR_NC}\]\$ "
+
+export PS1="${PROMPT_BASE}${PROMPT_GIT}${PROMPT_END}"
