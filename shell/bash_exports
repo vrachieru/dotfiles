@@ -27,9 +27,22 @@ export EDITOR=vim
 #-# Maven
 #-#
 
-export M2_HOME=/usr/local/apache-maven/
-export M2=$M2_HOME/bin
-export PATH=$M2:$PATH
+if [ -d /opt/maven ]; then
+  export MAVEN_HOME=/opt/maven
+  export MAVEN=$MAVEN_HOME/bin
+  export PATH=$PATH:$MAVEN
+fi
+
+
+#-#
+#-# Gradle
+#-#
+
+if [ -d /opt/gradle ]; then
+  export GRADLE_HOME=/opt/gradle
+  export GRADLE=$GRADLE_HOME/bin
+  export PATH=$PATH:$GRADLE
+fi
 
 
 #-#
