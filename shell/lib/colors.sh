@@ -1,10 +1,8 @@
 #!/bin/bash
 
 #-#
-#-# Text formatting
+#-# Foreground colors
 #-#
-
-# Foreground colors
 
 export COLOR_NC='\e[0m'
 export COLOR_WHITE='\e[1;37m'
@@ -24,7 +22,10 @@ export COLOR_YELLOW='\e[1;33m'
 export COLOR_GRAY='\e[0;30m'
 export COLOR_LIGHT_GRAY='\e[0;37m'
 
-# Background colors
+
+#-#
+#-# Background colors
+#-#
 
 export BACKGROUND_NB='\e[49m'
 export BACKGROUND_WHITE='\e[107m'
@@ -43,7 +44,10 @@ export BACKGROUND_YELLOW='\e[43m'
 export BACKGROUND_GRAY='\e[100m'
 export BACKGROUND_LIGHT_GRAY='\e[101m'
 
-# Text style
+
+#-#
+#-# Text style
+#-#
 
 export TEXT_NS='\e[0m'
 export TEXT_BOLD='\e[1m'
