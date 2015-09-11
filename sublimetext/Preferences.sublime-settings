@@ -19,6 +19,9 @@
   // Spacing between the gutter and the text
   "margin": 4,
 
+  // Font size
+  "font_size": 11,
+
   // Fold buttons are the triangles shown in the gutter to fold regions of text
   "fold_buttons": true,
 
