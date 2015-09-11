@@ -58,6 +58,8 @@
   "copy_with_empty_selection": true,
 
   // OS X: the selected text will be copied into the find panel when it's shown
-  "find_selected_text": true
+  "find_selected_text": true,
 
+  // Disables horizontal scrolling.
+  "word_wrap": "false"
 }
