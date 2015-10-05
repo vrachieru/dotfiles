@@ -15,8 +15,9 @@ alias lp='ls -d $PWD/{*,.*}'
 #-# Editors
 #-#
 
-alias sublime='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
-alias subl='sublime'
+if [[ $SYSTEM_OS -eq 'Darwin' ]]; then
+  alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+fi
 
 #-#
 #-# Grep
