@@ -88,7 +88,8 @@ alias lip="ifconfig | grep 'inet ' | grep -v '127.0.0.1' | head -n1 | awk '{prin
 #-# Misc
 #-#
 
-alias fucking=sudo
+alias sudo='sudo '
+alias fucking='sudo'
 alias cls='clear'
 alias week='date +%V'
 
