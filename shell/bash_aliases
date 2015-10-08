@@ -93,6 +93,8 @@ alias fucking='sudo'
 alias cls='clear'
 alias week='date +%V'
 
+alias shared='sudo mount -t vboxsf shared /media/shared'
+
 if [[ $SYSTEM_OS -eq 'Darwin' ]]; then
   alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
   alias battery='ioreg -w0 -l | grep Capacity | cut -d " " -f 17-50'
