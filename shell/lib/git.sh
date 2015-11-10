@@ -2,7 +2,9 @@
 
 is_git_repository() {
   git rev-parse &> /dev/null
-  return $?
+  [ $? == 0 ] \
+    && return 0 \
+    || return 1
 }
 
 in_git_work_tree() {
