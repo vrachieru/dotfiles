@@ -58,15 +58,20 @@ alias mvn:perform='mvn org.apache.maven.plugins:maven-release-plugin:2.5:perform
 #-# Easier navigation
 #-#
 
-alias ..='cd ../..'
-alias ...='cd ../../../'
-alias ....='cd ../../../../'
-alias .....='cd ../../../../..'
-alias ......='cd ../../../../../../'
-alias .......='cd ../../../../../../../'
-alias ........='cd ../../../../../../../../'
-alias .........='cd ../../../../../../../../../'
-alias ..........='cd ../../../../../../../../../../'
+function bd {
+    cd $(pwd | \grep -ioP ".*$*.*?/") # go back to specified directory in path
+}
+
+alias ..='bd '
+alias ...='cd ../..'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../..'
+alias .......='cd ../../../../../../'
+alias ........='cd ../../../../../../../'
+alias .........='cd ../../../../../../../../'
+alias ..........='cd ../../../../../../../../../'
+alias ...........='cd ../../../../../../../../../../'
 
 
 #-#
