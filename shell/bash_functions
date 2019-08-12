@@ -43,6 +43,19 @@ java-config() {
 }
 
 
+
+#-#
+#-# Python
+#-#
+
+# Remove all .pyc and .pyo files, and __pycache__ directories.
+pyclean() {
+  find "${1:-.}" -type f -name "*.py[co]" -delete
+  find "${1:-.}" -type d -name "__pycache__" -delete
+}
+
+
+
 #-#
 #-# Files
 #-#
